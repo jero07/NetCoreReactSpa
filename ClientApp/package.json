@@ -1,5 +1,5 @@
 {
-  "name": "rapp",
+  "name": "NetCoreReactSpa",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
@@ -45,5 +45,5 @@
     "webpack-md5-hash": "^0.0.6"
   },
   "license": "ISC",
-  "description": ""
+  "description": ".net core React spa template"
 }
