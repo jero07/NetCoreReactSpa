@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Rapp.csproj"
+                "${workspaceFolder}/NetCoreReactSpa.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
