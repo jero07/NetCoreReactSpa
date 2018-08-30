@@ -33,7 +33,7 @@ namespace NetCoreReactSpa
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
-            {
+            { 
                 app.UseDeveloperExceptionPage();
             }
             else
@@ -48,9 +48,13 @@ namespace NetCoreReactSpa
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
+               routes.MapRoute(
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
+               
+               routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Home", action = "Index" });
             });
 
             app.UseSpa(spa =>

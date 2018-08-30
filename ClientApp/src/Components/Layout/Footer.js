@@ -8,6 +8,6 @@ class Footer extends Component {
       </React.Fragment>
     );
   }
-}
+} 
 
 export default Footer;
