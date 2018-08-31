@@ -20,10 +20,32 @@ const styles = {
     padding: 4
   }
 };
+ 
+const Appheader = (props) => {
+  const { name, onPress, onDown } = props;
+     return (
+        <AppBar position="static">
+        <Toolbar variant="dense" color="inherit">
+          <IconButton
+            style={styles.menuButton}
+            color="inherit"
+            aria-label="Menu"
+            onClick={onPress}
+            onKeyDown={onDown}
+          >
+           {name === "main" ? <MenuIcon />  : <ArrowBackIcon/>}
+          </IconButton>
+          <Typography variant="title" color="inherit" style={styles.flex}>
+            App
+          </Typography>
+        </Toolbar>
+      </AppBar>
+  ) 
+};
 
 class Header extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       left: false
     };
@@ -33,47 +55,23 @@ class Header extends Component {
     this.setState({
       [side]: open
     });
+    console.log(this.state);
   };
+
 
   render() {
      
     return (
       <React.Fragment>
-        <AppBar position="static">
-          <Toolbar variant="dense" color="inherit">
-            <IconButton
-              style={styles.menuButton}
-              color="inherit"
-              aria-label="Menu"
-              onClick={this.toggleDrawer("left", true)}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="title" color="inherit" style={styles.flex}>
-              App
-            </Typography>
-          </Toolbar>
-        </AppBar>
+        <Appheader name="main" onPress={this.toggleDrawer("left", true)}
+          onDown={this.toggleDrawer("left", false)}
+        />
         <Drawer
           open={this.state.left}
-          onClose={this.toggleDrawer("left", false)}
-        >
-          <AppBar position="static">
-            <Toolbar variant="dense" color="inherit">
-              <IconButton
-                style={styles.menuButton}
-                color="inherit"
-                aria-label="Menu"
-                onClick={this.toggleDrawer("left", false)}
-                onKeyDown={this.toggleDrawer("left", false)}
-              >
-                <ArrowBackIcon />
-              </IconButton>
-              <Typography variant="title" color="inherit" style={styles.flex}>
-                App
-            </Typography>
-            </Toolbar>
-          </AppBar>
+          onClose={this.toggleDrawer("left", false)} >
+          <Appheader name="side" onPress={this.toggleDrawer("left", false)}
+            onDown={this.toggleDrawer("left", false)}
+          />
           <SideNav />
         </Drawer>
       </React.Fragment>
