@@ -8,17 +8,15 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace NetCoreReactSpa
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateWebHostBuilder(args).Build().Run();
+namespace NetCoreReactSpa {
+    public class Program {
+        public static void Main (string[] args) {
+            CreateWebHostBuilder (args).Build ().Run ();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+        public static IWebHostBuilder CreateWebHostBuilder (string[] args) =>
+            WebHost.CreateDefaultBuilder (args)
+            .UseUrls ("http://localhost:4001")
+            .UseStartup<Startup> ();
     }
 }
