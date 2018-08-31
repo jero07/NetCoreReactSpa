@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {withStyles, AppBar, Toolbar, Typography, Drawer,
-  List, Divider, IconButton } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import Sidebar from './Sidebar';
+  List, Divider, IconButton } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import ArrowBackIcon from '@material-ui/icons/ArrowBackIosRounded';
+import SideNav from './SideNav';
 
 const styles = {
   root: {
@@ -21,13 +22,13 @@ const styles = {
 };
 
 class Header extends Component {
- constructor(){
-     super();
-     this.state = {
-        left: false
-      };
- }
-   
+  constructor() {
+    super();
+    this.state = {
+      left: false
+    };
+  }
+
   toggleDrawer = (side, open) => () => {
     this.setState({
       [side]: open
@@ -44,7 +45,7 @@ class Header extends Component {
               style={styles.menuButton}
               color="inherit"
               aria-label="Menu"
-              onClick={this.toggleDrawer("left", true)} 
+              onClick={this.toggleDrawer("left", true)}
             >
               <MenuIcon />
             </IconButton>
@@ -57,14 +58,23 @@ class Header extends Component {
           open={this.state.left}
           onClose={this.toggleDrawer("left", false)}
         >
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer("left", false)}
-            onKeyDown={this.toggleDrawer("left", false)}
-          >
-           <Sidebar/>
-          </div>
+          <AppBar position="static">
+            <Toolbar variant="dense" color="inherit">
+              <IconButton
+                style={styles.menuButton}
+                color="inherit"
+                aria-label="Menu"
+                onClick={this.toggleDrawer("left", false)}
+                onKeyDown={this.toggleDrawer("left", false)}
+              >
+                <ArrowBackIcon />
+              </IconButton>
+              <Typography variant="title" color="inherit" style={styles.flex}>
+                App
+            </Typography>
+            </Toolbar>
+          </AppBar>
+          <SideNav />
         </Drawer>
       </React.Fragment>
     );
