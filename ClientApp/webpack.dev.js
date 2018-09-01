@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackMd5Hash = require('webpack-md5-hash');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');  
@@ -57,7 +56,6 @@ const config = {
       template: './public/index.html',
       filename: 'index.html'
     }),
-    new WebpackMd5Hash(),
     new webpack.HotModuleReplacementPlugin()
   ]
 };

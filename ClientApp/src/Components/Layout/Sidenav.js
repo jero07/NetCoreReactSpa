@@ -1,34 +1,41 @@
-import React, { Component } from "react";
-import PropTypes from 'prop-types';
-import {withStyles, Typography, Drawer, Divider, List} from '@material-ui/core';
+import React, { Component } from 'react';
+import { withStyles, Typography, List, Divider, IconButton
+} from '@material-ui/core';
 
-const drawerWidth = 240;
 const styles = {
     root: {
-        flexGrow: 1
+      flexGrow: 1
     },
-    drawerPaper: {
-        position: 'relative',
-        width: drawerWidth,
-    }
-};
-
-class Sidenav extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Drawer
-                    variant="permanent"
-                    style={styles.drawerPaper}
-                >
-                    <div />
-                    <List>test1</List>
-                    <Divider />
-                    <List> test 2</List>
-                </Drawer>
-            </React.Fragment>
-        );
+    leftnav:{
+      width: 240,
+      backgroundColor: '#fff'
+    },
+    sidelist:{
+      padding:10
     }
 }
+class SideNav extends Component {
+  constructor() {
+    super();
+  }
+  render() {
+      
+   const sideList = (
+    <div style={styles.leftnav}>
+      <div style={styles.sidelist}>
+      <List>Test1</List>
+      <Divider />
+      <List>Test2</List>
+      </div>
+    </div>
+  );
 
-export default withStyles(styles)(Sidenav);
+    return (
+     <React.Fragment>
+       {sideList}
+     </React.Fragment>
+    )
+  }
+}
+
+export default withStyles(styles)(SideNav);
