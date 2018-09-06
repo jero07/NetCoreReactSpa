@@ -27,7 +27,7 @@ class App extends Component {
 
         return (
             <React.Fragment>
-                <Grid container spacing={24}>
+                <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <Header />
                     </Grid>
