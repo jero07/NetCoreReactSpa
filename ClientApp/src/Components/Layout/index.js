@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import Footer from "./SideNav";
+import SideNav from "./SideNav";
 
 export {
   Header,
