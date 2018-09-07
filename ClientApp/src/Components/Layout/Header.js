@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { withStyles,AppBar,Toolbar,Typography,Drawer,IconButton
+import {
+  withStyles, AppBar, Toolbar, Typography, Drawer, IconButton, Button
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import ArrowBackIcon from '@material-ui/icons/ArrowBackIosRounded';
@@ -37,6 +38,9 @@ const Appheader = (props) => {
         <Typography variant="title" color="inherit" style={styles.flex}>
           App
         </Typography>
+        {name === "main" ?
+        <Button color="inherit">Login</Button>:""
+        }
       </Toolbar>
     </AppBar>
   )

@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
- 
 
 const rootElement = document.getElementById('app');
 
@@ -12,7 +11,7 @@ ReactDOM.render(
   <BrowserRouter>
     <React.Fragment>
      <CssBaseline/>
-      <App /> 
+      <App />
     </React.Fragment>
   </BrowserRouter>,
   rootElement

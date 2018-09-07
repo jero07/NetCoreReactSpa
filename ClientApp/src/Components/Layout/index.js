@@ -1,11 +1,11 @@
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
-import Sidenav from "./Sidenav";
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
+import SideNav from './SideNav';
 
 export {
   Header,
-  Sidenav,
+  SideNav,
   Main,
   Footer
 };

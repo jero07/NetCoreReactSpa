@@ -24,7 +24,7 @@ const styles = {
   paperMain: {
     padding: 10,
     marginTop: 5,
-    marginRight: 10,
+    //marginRight: 10,
     height: 500,
     textAlign: 'center'
   }
@@ -38,12 +38,12 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Grid container spacing={24}> 
+        <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Header />
+            <Header/>
           </Grid>
           <Grid item xs={3}>
-           side
+            side
           </Grid>
           <Grid item xs={9}>
             <Paper style={styles.paperMain}><Main/></Paper>
