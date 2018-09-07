@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import { withStyles, Typography, List, Divider, IconButton
-} from '@material-ui/core';
+import React, {Component} from 'react';
 
 const styles = {
     root: {

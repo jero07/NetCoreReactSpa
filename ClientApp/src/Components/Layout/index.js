@@ -7,5 +7,6 @@ export {
   Header,
   SideNav,
   Main,
+  SideNav,
   Footer
 };
